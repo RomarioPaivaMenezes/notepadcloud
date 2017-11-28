@@ -1,6 +1,13 @@
 package br.com.fiap.romario.notepadcloud.config;
 
+import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+
+import static java.util.Collections.singletonList;
 
 public class MongoConfig extends AbstractMongoConfiguration
 {
@@ -26,7 +33,7 @@ public class MongoConfig extends AbstractMongoConfiguration
 
     @Override
     public Mongo mongo() throws Exception {
-        return new MongoClient(singletonList(new ServerAddress(mongoHost, mongoPort)),singletonList(MongoCredencial.createCredential(
+        return new MongoClient(singletonList(new ServerAddress(mongoHost, mongoPort)),singletonList(MongoCredential.createCredential(
                 mongoUsername, mongoDB, mongoPassword.toCharArray()
         )));
 

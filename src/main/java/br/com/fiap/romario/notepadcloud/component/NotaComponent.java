@@ -27,11 +27,11 @@ public class NotaComponent {
 
     public Nota buscarNota(String titulo){
         Nota nota;
-        List<Nota> notas = notaRepository.findByTitulo(titulo);
-        if(notas.isEmpty()){
+        Nota notas = notaRepository.findByTitulo(titulo);
+        if(notas!=null){
             return new Nota();
         }else {
-            return notas.get(0);
+            return notas;
         }
     }
 
