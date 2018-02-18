@@ -11,33 +11,27 @@ import java.lang.annotation.Documented;
 public class Aluno {
 
     @Id
-    private String id;
-    private String titulo;
-    private String descricao;
-
-
-    public String getId(){
-        return id;
-    }
-
-    public void setId(String id){
-        this.id =  id;
-    }
-
-    public String getTitulo(){
-        return titulo;
-    }
-
-    public void setTitulo(String titulo){
-        this.titulo = titulo;
-    }
-
-    public String getDescricao(){
-        return  descricao;
-    }
-
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
-    }
-
+    private String rg;
+	private String nome;
+	private String dataNascimento;
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getRg() {
+		return rg;
+	}
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
 }

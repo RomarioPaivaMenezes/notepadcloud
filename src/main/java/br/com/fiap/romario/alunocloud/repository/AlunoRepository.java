@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AlunoRepository extends MongoRepository<Aluno, String> {
 
-    Aluno findByTitulo(String titulo);
+    Aluno findByRg(String titulo);
     
 
 }

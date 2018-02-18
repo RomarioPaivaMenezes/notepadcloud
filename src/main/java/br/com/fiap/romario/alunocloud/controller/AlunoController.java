@@ -16,21 +16,21 @@ import br.com.fiap.romario.alunocloud.model.Aluno;
 
 @Controller
 @CrossOrigin
-@RequestMapping(value = "/nota")
+@RequestMapping(value = "/aluno")
 public class AlunoController {
 
     @Autowired
     AlunoComponent alunoService;
 
 
-    @GetMapping(value = "/titulo/{titulo}")
-    Aluno buscar(@PathVariable(value = "titulo") String titulo){
-        return alunoService.buscarAluno(titulo);
+    @GetMapping(value = "/rg/{rg}")
+    public Aluno buscar(@PathVariable(value = "rg") String rg){
+        return alunoService.buscarAluno(rg);
     }
 
     @PostMapping
-    public void salvar(Aluno nota){
-        alunoService.salvar(nota);
+    public void salvar(Aluno aluno){
+        alunoService.salvar(aluno);
     }
     
     
@@ -39,9 +39,9 @@ public class AlunoController {
 		return alunoService.buscarTodos();
 	}
 	
-	@DeleteMapping("/aluno/{titulo}")
-	public void apagar(@PathVariable(value = "titulo") String titulo) {
-		alunoService.apagar(titulo);
+	@DeleteMapping("/aluno/{rg}")
+	public void apagar(@PathVariable(value = "rg") String rg) {
+		alunoService.apagar(rg);
 	}
 	
 	@DeleteMapping()

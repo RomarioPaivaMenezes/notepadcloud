@@ -15,10 +15,10 @@ public class AlunoComponent {
     AlunoRepository alunoRepository;
 
     public void salvar( Aluno aluno){
-        Aluno alunos = alunoRepository.findByTitulo(aluno.getTitulo());
+        Aluno alunos = alunoRepository.findByRg(aluno.getRg());
 
         if(alunos!=null){
-            aluno.setId(alunos.getId());
+            aluno.setRg(alunos.getRg());
         }
 
         alunoRepository.save(aluno);
@@ -27,7 +27,7 @@ public class AlunoComponent {
 
 
     public Aluno buscarAluno(String titulo){
-        Aluno aluno = alunoRepository.findByTitulo(titulo);
+        Aluno aluno = alunoRepository.findByRg(titulo);
         if(aluno!=null){
             return new Aluno();
         }else {
@@ -42,7 +42,7 @@ public class AlunoComponent {
 	}
 	
 	public void apagar(String titulo) {
-		Aluno aluno = alunoRepository.findByTitulo(titulo);
+		Aluno aluno = alunoRepository.findByRg(titulo);
 			alunoRepository.delete(aluno);
 
 	}
