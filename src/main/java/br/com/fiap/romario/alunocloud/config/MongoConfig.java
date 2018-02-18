@@ -1,4 +1,4 @@
-package br.com.fiap.romario.notepadcloud.config;
+package br.com.fiap.romario.alunocloud.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
